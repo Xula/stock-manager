@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import AppLayout from "@/components/AppLayout";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Stock Manager",
@@ -12,9 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-full flex flex-col">
-        <AntdRegistry>{children}</AntdRegistry>
+    <html lang="pt-br">
+      <body>
+        <AntdRegistry>
+          <div>
+            <AppLayout>{children}</AppLayout>
+          </div>
+        </AntdRegistry>
       </body>
     </html>
   );
