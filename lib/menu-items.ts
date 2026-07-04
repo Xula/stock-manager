@@ -5,8 +5,9 @@ export const menuItems: MenuProps["items"] = [
     label: "Produtos",
     key: "/produtos",
     children: [
-      { label: "Opção 1", key: "/produtos/opcao-1" },
-      { label: "Opção 2", key: "/produtos/opcao-2" },
+      { label: "Criar Produto", key: "/produtos/criar" },
+      { label: "Listar Produtos", key: "/produtos/listar" },
+      { label: "Editar Produto", key: "/produtos/editar" },
     ],
   },
   {

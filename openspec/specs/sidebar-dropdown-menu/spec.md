@@ -1,6 +1,6 @@
 ## Purpose
 
-Define o comportamento dos dropdowns colapsáveis na sidebar — cada módulo expande/recolhe exibindo subitens de navegação placeholder.
+Define o comportamento dos dropdowns colapsáveis na sidebar — cada módulo expande/recolhe exibindo subitens de navegação. Dropdowns com páginas reais implementadas (ex: Produtos) exibem subitens funcionais; os demais mantêm placeholders.
 
 ## Requirements
 
@@ -25,17 +25,36 @@ O sistema DEVE renderizar cada módulo da sidebar como um dropdown colapsável (
 
 ### Requirement: Subitens placeholder navegáveis
 
-Cada dropdown DEVE conter exatamente dois subitens com rotas placeholder no formato `<modulo>/opcao-1` e `<modulo>/opcao-2`.
+Cada dropdown QUE NAO POSSUI paginas reais implementadas DEVE conter exatamente dois subitens placeholder com rotas no formato `<modulo>/opcao-1` e `<modulo>/opcao-2`. O dropdown "Produtos" e excecao: todos os seus subitens sao funcionais.
 
-#### Scenario: Usuário clica em um subitem
+#### Scenario: Outros dropdowns mantem placeholders
 
-- **WHEN** o usuário clica em "Opção 1" dentro do dropdown "Produtos"
-- **THEN** o sistema navega para a rota `/produtos/opcao-1` e o subitem fica destacado como ativo
+- **WHEN** o usuário expande qualquer dropdown que nao seja "Produtos"
+- **THEN** o dropdown exibe "Opção 1" e "Opção 2" como subitens placeholder
 
-#### Scenario: Estrutura de subitens consistente
+### Requirement: Dropdown Produtos exibe itens funcionais
 
-- **WHEN** o usuário expande qualquer módulo da sidebar
-- **THEN** o dropdown exibe exatamente dois subitens: "Opção 1" e "Opção 2"
+O dropdown "Produtos" DEVE exibir "Listar Produtos", "Editar Produto" e "Criar Produto" como subitens funcionais, substituindo os placeholders "Opcao 1" e "Opcao 2".
+
+#### Scenario: Usuario expande o dropdown Produtos
+
+- **WHEN** o usuario expande o dropdown "Produtos"
+- **THEN** o dropdown exibe "Criar Produto", "Listar Produtos" e "Editar Produto"
+
+#### Scenario: Usuario clica em Listar Produtos
+
+- **WHEN** o usuario clica em "Listar Produtos" no dropdown
+- **THEN** o sistema navega para `/produtos/listar` e o subitem fica destacado como ativo
+
+#### Scenario: Usuario clica em Editar Produto
+
+- **WHEN** o usuario clica em "Editar Produto" no dropdown
+- **THEN** o sistema navega para `/produtos/editar` e o subitem fica destacado como ativo
+
+#### Scenario: Estrutura de subitens do dropdown Produtos
+
+- **WHEN** o usuario expande o dropdown "Produtos"
+- **THEN** o dropdown NAO exibe "Opcao 1" ou "Opcao 2" — exibe apenas "Criar Produto", "Listar Produtos" e "Editar Produto"
 
 ### Requirement: Dropdown pai fica aberto quando sub-rota está ativa
 
