@@ -15,6 +15,7 @@ export const menuItems: MenuProps["items"] = [
     key: "/unidades-de-medida",
     children: [
       { label: "Criar Unidade de Medida", key: "/unidades-de-medida/criar" },
+      { label: "Listar Unidades de Medida", key: "/unidades-de-medida/listar" },
       { label: "Editar Unidade de Medida", key: "/unidades-de-medida/editar" },
     ],
   },
