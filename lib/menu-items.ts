@@ -1,5 +1,7 @@
 import type { MenuProps } from "antd";
 
+// verificar se vamos deixar a opção de editar listada na sidebar
+// ou se vamos remover ela e deixar a tela acessível apenas pelo botão da tabela de listagem
 export const menuItems: MenuProps["items"] = [
   {
     label: "Produtos",
@@ -23,8 +25,9 @@ export const menuItems: MenuProps["items"] = [
     label: "Estoque",
     key: "/estoque",
     children: [
-      { label: "Opção 1", key: "/estoque/opcao-1" },
-      { label: "Opção 2", key: "/estoque/opcao-2" },
+      { label: "Listar Estoque", key: "/estoque/listar" },
+      { label: "Criar Estoque", key: "/estoque/criar" },
+      { label: "Editar Estoque", key: "/estoque/editar" },
     ],
   },
   {
