@@ -34,16 +34,18 @@ export const menuItems: MenuProps["items"] = [
     label: "Clientes",
     key: "/clientes",
     children: [
-      { label: "Opção 1", key: "/clientes/opcao-1" },
-      { label: "Opção 2", key: "/clientes/opcao-2" },
+      { label: "Listar Clientes", key: "/clientes/listar" },
+      { label: "Criar Cliente", key: "/clientes/criar" },
+      { label: "Editar Cliente", key: "/clientes/editar" },
     ],
   },
   {
     label: "Fornecedores",
     key: "/fornecedores",
     children: [
-      { label: "Opção 1", key: "/fornecedores/opcao-1" },
-      { label: "Opção 2", key: "/fornecedores/opcao-2" },
+      { label: "Listar Fornecedores", key: "/fornecedores/listar" },
+      { label: "Criar Fornecedor", key: "/fornecedores/criar" },
+      { label: "Editar Fornecedor", key: "/fornecedores/editar" },
     ],
   },
   {
